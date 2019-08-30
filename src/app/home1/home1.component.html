@@ -1,21 +1,98 @@
-<p>home1 works!</p>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">RITESH Music</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Live</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Music</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Charts</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Features
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-2">
+        <input #start placeholder="Search" type="text"class="form-control mr-sm-2">
+        <button (click)="searchApi(start.value)"routerLink="/search" routerLinkActive="active"class="btn btn-success">Search</button>
+      </form>
+    </div>
+</nav>
 
-<h3>list of fetched data</h3>
 
-<ul *ngFor="let fd of fetchedData">
-    <li>{{fd.album.name}}</li>
-    <li>{{fd.album.url}}</li>
-    <li>{{fd.album.artist}}</li>
-    <li>{{fd.album.mbid}}</li>
-    <li>{{fd.album.listeners}}</li>
-    <li>{{fd.album.playcount}}</li>
-    <li>{{fd.album.tags}}</li>
-    <li>{{fd.album.tags.tag}}</li>
+<!--
+<div class="inline-alb">
+        <div class="card" style="width: 18rem;">
+                <img [src]="fetchedAlbum.album.image[3]['#text']" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{fetchedAlbum.album.name}}</h5>
+                  <p class="card-text">{{fetchedAlbum.album.listeners}} | {{fetchedAlbum.album.artist}}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+          </div>
+</div>
+-->
 
+<br>
+<h3>CHART TOP ARTISTS WORLD</h3>
+<br>
+<div  class="TopRepeat" >
+<div class="card" *ngFor="let x of fetchedartistApi2" style="width: 12rem;"> 
+  <img [src]="x.image[1]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
+  <div class="card-body">   
+    <h5 class="card-title">{{x.name}}</h5>
+    <p class="card-text">{{x.playcount}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
 
-</ul>
+<br>
+<h3>Top Artists of INDIA</h3>
+<br>
+<div class="TopRepeat">
+<div class="card" *ngFor="let x of fetchedcontryTop" style="width: 12rem;"> 
+    <img [src]="x.image[0]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
+    <div class="card-body">   
+        <h5 class="card-title">{{x.name}}</h5>
+        <p class="card-text">{{x.listeners}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>     
+</div>
+</div>
 
-        
+<br>
+<h3>TOP TRACKS OF INDIA</h3>
+<br>
+<div class="TopRepeat">
+<div class="card" *ngFor="let x of fetchedcontryTopTracks" style="width: 12rem;"> 
+    <img [src]="x.image[0]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
+    <div class="card-body">   
+        <h5 class="card-title">{{x.name}}</h5>
+        <p class="card-text">{{x.listeners}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>     
+</div>
+</div>
 
 
 

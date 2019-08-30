@@ -1,12 +1,11 @@
-
 .TopRepeat{
     display: flex;
     flex-direction: row;
     
 }
 .card{
-    flex: 0.2;
-    background-color: rgb(74, 74, 202);
+    flex: 1.667;
+    background-color: crimson;
 }
 img{
     display: inline-block ;
