@@ -8,7 +8,6 @@ import { HttpService1Service } from '../http-service1.service';
   styleUrls: ['./home1.component.css']
 })
 export class Home1Component implements OnInit {
-  public fetchedAlbum= [];
   public fetchedartistApi2= [];
   public fetchedcontryTop= [];
   public fetchedcontryTopTracks=[];
@@ -38,5 +37,8 @@ export class Home1Component implements OnInit {
 
   searchApi(value){
      this._httpServ.searchApiService(value);
+  }
+  GoToDetails(value){
+    this._httpServ.ArtistInfoService(value);
   }
 }

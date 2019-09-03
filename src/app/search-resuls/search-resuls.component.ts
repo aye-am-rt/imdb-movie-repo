@@ -14,7 +14,7 @@ export class SearchResulsComponent implements OnInit {
   ngOnInit() {
 
     this._httpServSearch.ReturnSearch().subscribe((data)=> {
-      console.log(data,"30 search results object");
+      console.log(data,"30 SEARCH RESULT OBJECTS");
       this.SearchResults = data.results.trackmatches.track;
       console.log(this.SearchResults, "SEARCH RESULTS");
     });
@@ -23,5 +23,9 @@ export class SearchResulsComponent implements OnInit {
   searchApi(value){
     this._httpServSearch.searchApiService(value);
  }
+
+ AddToFavs(name){
+  this._httpServSearch.ShowFavouritsService(name);
+}
 
 }

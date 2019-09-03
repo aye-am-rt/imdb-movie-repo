@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">RITESH Music</a>
@@ -40,48 +41,35 @@
 
 
 
+<div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+                <img [src]="fetchedDetails[0].artist.image[1]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
+                <div class="card-body">
+                  <h5 class="card-title">Name :-{{fetchedDetails[0].artist.name}}</h5>
+                  <p class="card-text">Listeners :-{{fetchedDetails[0].artist.stats.listeners}}</p>
+                  <p class="card-text">PlayCount :-{{fetchedDetails[0].artist.stats.playcount}}</p>
+                  <br>
+                </div>
+        </div>
+        <div class="side-to-card">
+            <h4>Content :-</h4> {{fetchedDetails[0].artist.bio.content | slice:0:980}}
+            <br><br>
+            <h4>Published :-</h4> {{fetchedDetails[0].artist.bio.published | slice:0:50}}
+            <br><br>
+            <h4>Summary :-</h4><p> {{fetchedDetails[0].artist.bio.summary | slice:0:700}}</p>
 
-<br>
-<h3>CHART TOP ARTISTS WORLD</h3>
-<br>
-<div  class="TopRepeat" >
-<div class="card" *ngFor="let x of fetchedartistApi2" style="width: 12rem;"> 
-  <img [src]="x.image[1]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
-  <div class="card-body">   
-    <h5 class="card-title">Name: {{x.name}}</h5>
-    <p class="card-text">PlayCount: {{x.playcount}}</p>
-    <button (click)="GoToDetails(x.name)"routerLink="/Details" routerLinkActive="active"class="btn btn-dark">Get Info</button>
-  </div>
-</div>
-</div>
-
-<br>
-<h3>Top Artists of INDIA</h3>
-<br>
-<div class="TopRepeat">
-<div class="card" *ngFor="let x of fetchedcontryTop" style="width: 12rem;"> 
-    <img [src]="x.image[0]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
-    <div class="card-body">   
-        <h5 class="card-title">Name: {{x.name}}</h5>
-        <p class="card-text">Listeners: {{x.listeners}}</p>
-        <button (click)="GoToDetails(x.name)"routerLink="/Details" routerLinkActive="active"class="btn btn-dark">Get Info</button>
-      </div>     
-</div>
+        </div>
 </div>
 
-<br>
-<h3>TOP TRACKS OF INDIA</h3>
-<br>
-<div class="TopRepeat">
-<div class="card" *ngFor="let x of fetchedcontryTopTracks" style="width: 12rem;"> 
-    <img [src]="x.image[0]['#text']" class="card-img-top" alt="Image Is Not Available In Server"> 
-    <div class="card-body">   
-        <h5 class="card-title">Name: {{x.name}}</h5>
-        <p class="card-text">Listeners: {{x.listeners}}</p>
-        <button (click)='GoToDetails(x.name)'routerLink="/Details" routerLinkActive="active"class="btn btn-dark">Get Info</button>
-      </div>     
-</div>
+<div class="divBelowJumbo">
+    <h3><i class="fas fa-heart"></i></h3>
+    <h3><i class="fas fa-heart"></i></h3>
+    <h3><i class="fas fa-heart"></i></h3>
+    <button (click)="AddToFavs(fetchedDetails[0].artist.name)"routerLink="/favourites" routerLinkActive="active"class="btn btn-success">Add To Favorites</button>
+    <h3><i class="fas fa-heart inend"></i></h3>
+    <h3><i class="fas fa-heart inend"></i></h3>
+    <h3><i class="fas fa-heart inend"></i></h3>
 </div>
 
-
+<!-- http://localhost:3000/posts/1 -->
 

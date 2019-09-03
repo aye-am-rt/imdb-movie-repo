@@ -1,0 +1,28 @@
+.jumbotron{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.jumbotron >.card{
+    flex: 0.2;
+    background-color: rgb(56, 114, 238);
+}
+.jumbotron >.side-to-card{
+    flex: 0.6;
+}
+.jumbotron>.side-to-card h4{
+    text-decoration: underline;
+    color: blue;
+}
+.divBelowJumbo{
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 30px 0px;
+}
+.divBelowJumbo > button{
+    
+    flex: 0.2;
+}
+

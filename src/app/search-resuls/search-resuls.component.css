@@ -1,3 +1,7 @@
+body {
+    position: relative; 
+}
+
 .TopRepeat{
     display: flex;
     flex-direction: row;
